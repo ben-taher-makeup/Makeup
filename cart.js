@@ -62,14 +62,22 @@ let arr = []
 let whatsappBtn =document.createElement("button")
     whatsappBtn.classList.add("send-whatsapp")
     whatsappBtn.textContent="ارسل عبر الواتساب"
+
+let labelname = document.createElement("label")  
+labelname.textContent = "اسمك:"
+labelname.style.display = " block"
 let city = document.querySelector(".name-city")
 let clientcity= document.createElement("input")
 clientcity.placeholder = "ادخل اسم مدينتك"
 clientcity.style.width="200px"
 clientcity.style.margin="1rem"
 
+let labelcity = document.createElement("label")
+labelcity.textContent = "اسم مدينتك:"
+labelcity.style.display = " block"
+
 let clientname= document.createElement("input")
-clientname.placeholder = "ادخلل اسمك"
+clientname.placeholder = "ادخل اسمك"
 clientname.style.width="200px"
 clientname.style.margin="1rem"
 
@@ -124,7 +132,7 @@ cart.forEach((item, index) => {
         }
 
     })
-    city.append(clientname,clientcity)
+    city.append(labelname,clientname,labelcity,clientcity)
     voice.append(rowtable, total,whatsappBtn)
     rowtable.append(nameh2,priceh2,inputholder,totalh2,countbtn,deletebtn)
     inputholder.append(counth2)
@@ -159,7 +167,7 @@ whatsappBtn.addEventListener("click", () => {
         cart.forEach((item, index) => {
             let itemTotal = arr[index] || 0
             message += `المنتج: ${item.name}\n`
-            message += `الثمن: درهم ${item.price} \n\n`
+            message += `الثمن: درهم ${item.price.toFixed(2)} \n\n`
             message += `المجموع: درهم  ${itemTotal.toFixed(2)} \n\n`
         })
         message += `المجموع: درهم ${grandtotal.toFixed(2)} `

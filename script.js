@@ -88,7 +88,6 @@ async function loadProducts() {
         productElements.classList.add("product")
         productElements.dataset.id = product.id
 
-
         let productImg = document.createElement("div")
         productImg.classList.add("product-img")
 

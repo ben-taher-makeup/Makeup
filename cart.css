@@ -7,6 +7,11 @@ table{
 .cart-page{
     margin-top: 2rem;
 }
+label {
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: large;
+}
 input{
     height: 22px;
     padding-bottom: 6px;

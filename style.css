@@ -1,12 +1,12 @@
 body{
     margin: 0;
-    background-color:aliceblue;
+    background-color: #f5eee6;
 }
 .nav{
     width: 100%;
     display: none;
     gap: 3rem;
-    background-color: rgb(38, 38, 38);
+    background-color: #c9a96e;
     color: aliceblue;
     
 }
@@ -28,16 +28,20 @@ body{
     padding-bottom: 0.7rem;
     display: flex;
     gap: 0.5rem;
-    background-color: rgb(38, 38, 38);
+    background-color: rgb(1, 133, 5);
     color: aliceblue;
 }
 .icon *{
     padding: 5px 0.5rem;
 }
+
+
 .logo2{
     flex-grow: 1;
     min-width: 50px;
+    transition: 0.3s;
 }
+
 .icon  *:hover:not(.logo2 ) {
     border-radius: 30px;
     padding: 4px 10px;
@@ -91,6 +95,7 @@ button{
     padding-left: 1rem;
     padding-top: 1rem;
     border: 3px solid black;
+    border-radius: 16px;
     width: 220px;
 }
 #h2tag{
@@ -103,7 +108,7 @@ button{
     aspect-ratio: 1/1;
     overflow: hidden;
     border: 1px solid black;
-    border-radius: 30px;
+    border-radius: 8px;
 }
 .product-img img {
     width: 100%;

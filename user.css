@@ -1,12 +1,12 @@
 body{
     margin: 0;
-    background-color:aliceblue;
+    background-color: #f5eee6;
 }
 .nav{
     width: 100%;
     display: none;
     gap: 3rem;
-    background-color: rgb(38, 38, 38);
+    background-color: #c9a96e;
     color: aliceblue;
     
 }
@@ -27,7 +27,7 @@ body{
     padding-bottom: 0.7rem;
     display: flex;
     gap: 0.5rem;
-    background-color: rgb(38, 38, 38);
+    background-color: #c9a96e;
     color: aliceblue;
 }
 .icon *{
