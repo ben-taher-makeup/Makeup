@@ -28,7 +28,7 @@ body{
     padding-bottom: 0.7rem;
     display: flex;
     gap: 0.5rem;
-    background-color: rgb(1, 133, 5);
+    background-color:#c9a96e;
     color: aliceblue;
 }
 .icon *{
