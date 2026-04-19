@@ -42,7 +42,7 @@ let products = document.querySelector(".products");
 let about = document.querySelector(".about");
 let contact = document.querySelector(".contact");
 
-
+let searchbar = document.querySelector("#searchbar")
 nav_product.forEach(el =>{
     el.addEventListener("click",()=>{
         products.scrollIntoView({behavior:"smooth"});
@@ -80,10 +80,25 @@ async function loadProducts() {
         console.error(error)
         return
     }
+    
     let productDiv = document.createElement("div")
     productDiv.classList.add("products")
     data.forEach(product =>{
-        
+        let allproducts = []
+        allproducts.push(product.name)
+        searchbar.addEventListener("input",e=>{
+            let currentvalue = e.target.value.toLowerCase()
+            let h2search = document.querySelectorAll("#h2tag")
+            h2search.forEach(tag =>{
+                if (tag.textContent.toLowerCase().includes(currentvalue)){
+                    tag.parentNode.style.display = "block"
+                }else{
+                    tag.parentNode.style.display = "none"
+
+                }
+            })
+        })
+       
         let productElements = document.createElement("div")
         productElements.classList.add("product")
         productElements.dataset.id = product.id
@@ -98,7 +113,7 @@ async function loadProducts() {
         let pricetag = document.createElement("h3")
         pricetag.id = "pricetag"
         pricetag.classList.add("price")
-        pricetag.textContent = product.price+ " Dh"
+        pricetag.textContent = product.price + " Dh"
 
         let imgtag = document.createElement("img")
         imgtag.id = "imgtag"

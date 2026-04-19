@@ -3,6 +3,7 @@ let container = document.querySelector(".container");
 let nameinput = document.querySelector("#nameInput");
 let priceinput = document.querySelector("#priceInput");
 let descriptioninput = document.querySelector("#descriptionInput");
+let catagoryinput = document.querySelector("#catagoryinput");
 let input = document.querySelector("#imageInput");
 let uploadbtn = document.querySelector("#uploadBtn");
 
@@ -55,6 +56,7 @@ document.querySelector(".admin").style.display= "none"
 paswordbtn.addEventListener("click", ()=>{
     if (paswordinp.value !== "simo mol lmakyaj"){
         alert("كلمة السر غير صحيحة")
+        paswordinp.value = ""
         return
     }
     else{
@@ -83,6 +85,7 @@ uploadbtn.addEventListener("click", async()=>{
     let price = priceinput.value;
     let description = descriptioninput.value;
     let imagesUrl = []
+    let catagory = catagoryinput.value
 
 
     if (!files || !name || !price || !description ){
@@ -115,7 +118,8 @@ uploadbtn.addEventListener("click", async()=>{
         price:price,
         image:imagesUrl[0],
         description:description,
-        images:imagesUrl
+        images:imagesUrl,
+        catagory:catagory
       }
     ])
     if(dbEroor){
@@ -123,6 +127,11 @@ uploadbtn.addEventListener("click", async()=>{
       return
     }
     alert("تم اضافة المنتج")
+    nameinput.value = ""
+    priceinput.value = ""
+    descriptioninput.value = ""
+    catagoryinput.value = ""
+    input.value = ""
 })
 async function display() {
     let {data,error } = await supabase
