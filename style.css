@@ -101,6 +101,7 @@ button{
 #h2tag{
     width: 180px;
     overflow: hidden;
+    height: 32px;
 }
 .product-img{
     width: 200px;

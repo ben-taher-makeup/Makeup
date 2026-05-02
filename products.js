@@ -1,71 +1,49 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 const supabase = createClient('https://gkwkorqpktidgxladvzi.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdrd2tvcnFwa3RpZGd4bGFkdnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMTYzNzAsImV4cCI6MjA4OTU5MjM3MH0.hBT4v2wUyn2KRme6dutz4cK0pApZyF9fonRb0DPyQxM')
 
-//main page
-// let user = document.querySelector(".user");
-// let user2 = document.querySelector(".user2");
-// user.addEventListener("click",()=>{
-//     window.location.href = "user.html";
-// })
-// user2.addEventListener("click",()=>{
-//     window.location.href = "user.html";
-// })
 
-
+let contai = document.querySelector(".contai");
 
 let home = document.querySelectorAll(".home");
+let nav_about = document.querySelectorAll(".nav-about");
+let nav_contact = document.querySelectorAll(".nav-contact");
+let nav_pro = document.querySelectorAll(".nav-product");
+let cart_cart = document.querySelectorAll(".fa-cart-shopping");
+
+nav_about.forEach(el =>{
+    el.addEventListener("click",()=>{
+        window.location.href = "index.html#nav-about";  
+    })
+
+})
 home.forEach(el =>{
     el.addEventListener("click",()=>{
         window.location.href = "index.html";  
     })
 
 })
-let logo = document.querySelectorAll(".logo, logo2");
-logo.forEach(el =>{
-    el.addEventListener("click",()=>{
-        window.location.href = "index.html";  
-    })
-
-})
-let cart_icon = document.querySelectorAll(".fa-cart-shopping");
-cart_icon.forEach(el =>{
+cart_cart.forEach(el =>{
     el.addEventListener("click",()=>{
         window.location.href = "cart.html";  
     })
 
 })
-let nav_product = document.querySelectorAll(".nav-product");
-let nav_about = document.querySelectorAll(".nav-about");
-let nav_contact = document.querySelectorAll(".nav-contact");
-
-let products = document.querySelector(".products");
-let about = document.querySelector(".about");
-let contact = document.querySelector(".contact");
-
-let searchbar = document.querySelector("#searchbar")
-nav_product.forEach(el =>{
-    el.addEventListener("click",()=>{
-        window.location.href ="products.html"
-    })
-
-})
-nav_about.forEach(el =>{
-    el.addEventListener("click",()=>{
-        about.scrollIntoView({behavior:"smooth"});
-    })
-})
 nav_contact.forEach(el =>{
     el.addEventListener("click",()=>{
-        contact.scrollIntoView({behavior:"smooth"});
+        window.location.href = "index.html#nav-contact";  
     })
+
+})
+
+let cartbtn = document.querySelectorAll(".cart-button")
+cartbtn.forEach(el =>{
+    el.addEventListener("click",()=>{
+        window.location.href = "cart.html";  
+    })
+
 })
 
 
-
-
-
-let conatiner = document.querySelector(".container")
-let miniContainer = document.querySelector(".miniContainer")
 
 
 
@@ -139,7 +117,7 @@ async function loadProducts() {
         productImg.append(imgtag)
         productElements.append(productImg,h2tag,pricetag,cartbtn )
         productDiv.append(productElements)
-        miniContainer.append(productDiv)
+        contai.append(productDiv)
     })
     
     let product = document.querySelectorAll(".product");
@@ -156,14 +134,3 @@ async function loadProducts() {
 }
 
 loadProducts()
-
-
-
-
-
-
-
-//  i will create an array and push to it an object that has 
-//  the name and pirce  of the project
-
-

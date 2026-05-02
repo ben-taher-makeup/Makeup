@@ -26,7 +26,7 @@ nav_about.forEach(el =>{
 })
 nav_pro.forEach(el =>{
     el.addEventListener("click",()=>{
-        window.location.href = "index.html#nav-pro";  
+        window.location.href = "products.html";  
     })
 
 })
